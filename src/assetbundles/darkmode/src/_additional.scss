@@ -265,10 +265,10 @@ only screen and (-moz-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
 only screen and (min-resolution: 1.5dppx) {
     .route .uri-container:after {
-        body.ltr .global-container & {
+        body.ltr #global-container & {
             background-image: url(images/route-bg_2x.png);
         }
-        body.rtl .global-container & {
+        body.rtl #global-container & {
             background-image: url(images/route-bg_rtl_2x.png);
         }
     }
