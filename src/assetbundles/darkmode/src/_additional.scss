@@ -235,6 +235,10 @@ body.ltr #main-container #main #main-content #content-container #tabs ul li a.se
     background: $lightBgColor;
 }
 
+#main-container #main #main-content #details .meta>.field>.heading>label, #main-container #main #main-content #details .meta>.field>.heading, #main-container #main #main-content #details .meta>.data>.heading>label, #main-container #main #main-content #details .meta>.data>.heading {
+    color: $mediumDarkTextColor;
+}
+
 /****
 * routes.scss
 ****/
