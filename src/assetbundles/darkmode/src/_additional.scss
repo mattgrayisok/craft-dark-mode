@@ -239,19 +239,19 @@ body.ltr #main-container #main #main-content #content-container #tabs ul li a.se
 * routes.scss
 ****/
 
-.darkmode .route {
+body .route {
     background: $lightBgColor;
     box-shadow: 0 0 0 1px $hairlineColor;
     background-image: linear-gradient($lightBgColor, darken($lightBgColor, 1%));
     cursor: pointer;
 }
 
-.darkmode .route .uri-container {
+body .route .uri-container {
     color: $linkColor;
     background-color: darken($lightBgColor, 4%);
 }
 
-.darkmode .route .uri-container:after {
+body .route .uri-container:after {
   body.ltr & {
     background-image: url(images/route-bg.png);
   }
@@ -265,16 +265,16 @@ only screen and (-moz-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
 only screen and (min-resolution: 1.5dppx) {
     .route .uri-container:after {
-        body.darkmode.ltr & {
+        body.ltr .global-container & {
             background-image: url(images/route-bg_2x.png);
         }
-        body.darkmode.rtl & {
+        body.rtl .global-container & {
             background-image: url(images/route-bg_rtl_2x.png);
         }
     }
 }
 
-.darkmode .route-settings .uri-tokens {
+body .route-settings .uri-tokens {
   background: $inputElementBgColor;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05), inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
@@ -299,7 +299,7 @@ only screen and (min-resolution: 1.5dppx) {
 * plugins.scss
 ****/
 
-.darkmode #plugins tbody .plugin-infos .details .license-key .pane {
+body #plugins tbody .plugin-infos .details .license-key .pane {
     background: #000;
 }
 
