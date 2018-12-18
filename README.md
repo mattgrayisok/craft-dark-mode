@@ -2,7 +2,7 @@
 
 A Dark Mode for Craft CMS
 
-![Screenshot](resources/img/plugin-logo.png)
+![Logo](resources/img/plugin-logo.png)
 
 ## Requirements
 
@@ -26,8 +26,11 @@ To install the plugin, follow these instructions.
 
 Sometimes you just need a little less light and a little more shade.
 
+![Screenshot](resources/img/screengrab.png)
+
 ## Dark Mode Roadmap
 
+* Improve assets display. Might need to make some custom images
 * Allow dark mode to be [de]activated using a switch in the nav
 
 Brought to you by [Matt Gray](https://mattgrayisok.com)
