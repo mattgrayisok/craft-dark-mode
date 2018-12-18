@@ -1,0 +1,40 @@
+{
+    "name": "mattgrayisok/craft-dark-mode",
+    "description": "A Dark Mode for Craft CMS",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "dark mode"
+    ],
+    "support": {
+        "docs": "https://github.com/mattgrayisok/craft-dark-mode/blob/master/README.md",
+        "issues": "https://github.com/mattgrayisok/craft-dark-mode/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matt Gray",
+            "homepage": "https://mattgrayisok.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "mattgrayisok\\darkmode\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Dark Mode",
+        "handle": "craft-dark-mode",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/mattgrayisok/craft-dark-mode/master/CHANGELOG.md",
+        "class": "mattgrayisok\\darkmode\\DarkMode"
+    }
+}

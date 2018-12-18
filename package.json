@@ -1,0 +1,15 @@
+{
+  "name": "darkmode",
+  "version": "1.0.0",
+  "description": "Dark Mode for Craft CMS",
+  "main": "index.js",
+  "repository": "https://github.com/mattgrayisok/craft-dark-mode",
+  "author": "Matt Gray",
+  "license": "MIT",
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  },
+  "scripts": {
+    "build": "./node_modules/.bin/node-sass --output-style compressed ./src/assetbundles/darkmode/src/craft/craft.scss > ./src/assetbundles/darkmode/dist/css/DarkMode.css"
+  }
+}
