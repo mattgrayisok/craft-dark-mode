@@ -32,7 +32,7 @@ Sometimes you just need a little less light and a little more shade.
 
 * Improve assets display. Might need to make some custom images
 * Get redactor styling to match
-* Allow dark mode to be [de]activated using a switch in the nav
+* Allow dark mode to be [de]activated on a per-user basis using a switch in the nav
 
 Brought to you by [Matt Gray](https://mattgrayisok.com)
 
