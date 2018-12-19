@@ -10,7 +10,11 @@ This plugin requires Craft CMS 3.0.0 or later.
 
 ## Installation
 
-To install the plugin, follow these instructions.
+Install via the Craft Plugin Store
+
+OR
+
+To install the plugin manually, follow these instructions.
 
 1. Open your terminal and go to your Craft project:
 
