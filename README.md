@@ -28,6 +28,12 @@ Sometimes you just need a little less light and a little more shade.
 
 ![Screenshot](resources/img/screengrab.png)
 
+## Plugin Developers
+
+If your plugin adds custom elements to the control panel and you'd like to support Dark Mode
+it couldn't be easier. Dar Mode adds the class `.darkmode` to the `body` tag when it is enabled,
+simply add some additional styles to your plugin to take this into account.
+
 ## Dark Mode Roadmap
 
 * Improve assets display. Might need to make some custom images
