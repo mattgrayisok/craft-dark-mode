@@ -26,7 +26,8 @@ $mediumTextColor: hsl($hue, 0%, 60%);
 $lightTextColor: hsl($hue, 0%, 75%);
 $linkColor: hsl($hue, 40%, 60%);
 
-$inputElementBgColor: lighten($bgColor, 6%);
+$inputElementBgColor: darken($bgColor, 6%);
+$buttonBgColor: lighten($bgColor, 6%);
 
 // hairline colors
 $hairlineColor: hsl($hue, 0%, 10%);
@@ -354,7 +355,7 @@ $elementBorderRadius: 2px;
 }
 
 @mixin text-input-focused-styles {
-  border-color: $blue;
+  border-color: rgba($hairlineColorAlpha, 0.3);
   outline: none;
 }
 

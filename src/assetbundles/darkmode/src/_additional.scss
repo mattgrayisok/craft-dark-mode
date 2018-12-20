@@ -42,24 +42,19 @@
   background-image: linear-gradient($secondarySubmitColor, darken($secondarySubmitColor, 20%));
 }
 
-.secondary-buttons .btn.submit:not(.disabled):not(.inactive):hover,
-.secondary-buttons .btn.submit:not(.disabled):not(.inactive).hover {
-  background-image: linear-gradient($secondarySubmitHoverColor, darken($secondarySubmitHoverColor, 20%));
-}
-
 .secondary-buttons .btn.submit:not(.disabled):not(.inactive):active,
 .secondary-buttons .btn.submit:not(.disabled):not(.inactive).active {
   background-image: linear-gradient($secondarySubmitActiveColor, darken($secondarySubmitActiveColor, 20%));
 }
 
+.secondary-buttons .btn.submit:not(.disabled):not(.inactive):hover,
+.secondary-buttons .btn.submit:not(.disabled):not(.inactive).hover {
+    background-image: linear-gradient(lighten($secondarySubmitHoverColor, 4%), darken($secondarySubmitHoverColor, 16%));
+}
+
 .modal,
 .hud .body {
   background: $menuBgColor;
-}
-
-
-.text {
-  background: $inputElementBgColor;
 }
 
 .btn {
@@ -74,11 +69,15 @@
   }
   &:not(.submit) {
     color: $textColor;
-    background-image: linear-gradient(lighten($inputElementBgColor, 4%),$inputElementBgColor);
+    background-image: linear-gradient(lighten($buttonBgColor, 4%),$buttonBgColor);
+
+    &:hover{
+        background-image: linear-gradient(lighten($buttonBgColor, 8%),lighten($buttonBgColor, 4%));
+    }
 
     &:active,
     &.active {
-      background-image: linear-gradient(lighten($inputElementBgColor, 6%),lighten($inputElementBgColor, 2%));
+      background-image: linear-gradient(lighten($buttonBgColor, 6%),lighten($buttonBgColor, 2%));
     }
   }
 
@@ -101,7 +100,7 @@ table thead th.orderable:hover {
 
 input.checkbox + label:before,
 div.checkbox:before {
-  background: lighten($inputElementBgColor, 10%);
+  background: lighten($buttonBgColor, 10%);
   box-shadow: 0 0 0 1px $mediumHairlineColorAlpha;
 }
 
@@ -138,7 +137,7 @@ ul.icons li a svg *{
 
 .select:not(.selectize) select {
   option {
-    background: $inputElementBgColor;
+    background: $buttonBgColor;
   }
 }
 
@@ -220,8 +219,9 @@ body.ltr table.editable tbody tr th ~ td:not(:first-child) {
     background: $lightBgColor;
 }
 
-body.ltr #main-container #main #main-content #content-container #tabs ul li a.sel:after {
-    background: linear-gradient(to right, rgba($lightBgColor, 0), rgba($lightBgColor,0.1) 17px);
+body.ltr #main-container #main #main-content #content-container #tabs ul li a.sel:after,
+body.ltr #main-container #main #main-content #content-container #tabs ul li a:after {
+    background: none;
 }
 
 #main-container #main #main-content #content-container #tabs:after {
@@ -361,4 +361,56 @@ body #pluginstore-modal.step-plugin-details .plugin-details .plugin-details-body
 
 body .widget > .back > .pane {
   background: $lightBgColor;
+}
+
+
+/****
+* Text input and redactor
+****/
+
+body textarea,
+body .text:not(.selectize-text),
+body .text:not(.fullwidth),
+body .border-box,
+body .matrix-configurator>.field>.input, .selectize-text>.selectize-control>.selectize-input,
+body .redactor-box, body .redactor-box.redactor-styles-on,
+body .input .redactor-styles{
+    color: darken($textColor, 10%);
+    background-color: $inputElementBgColor;
+}
+
+body .input .redactor-box:not(.redactor-box-fullscreen) {
+    border: 1px solid $hairlineColorAlpha;
+    border-radius: $textBorderRadius;
+}
+
+body .input .redactor-box.focus:not(.redactor-box-fullscreen) {
+    border-color: rgba($hairlineColorAlpha, 0.3) !important;
+}
+
+body .redactor-styles a,
+body .redactor-styles a:hover {
+    color: $linkColor
+}
+
+body .redactor-source,
+body .redactor-source:hover,
+body .redactor-source:focus {
+    background-color: $inputElementBgColor;
+}
+
+.redactor-toolbar a.re-button-icon,
+.redactor-toolbar a.re-button-icon:hover {
+    background: #333 !important; color: #666 !important;
+}
+
+.input .redactor-toolbar {
+    border-color: #333 !important;
+}
+
+body.ltr #main-container #main #main-content #content-container #tabs ul li a.sel:after {
+    background: none;
+}
+body.ltr #main-container #main #main-content #content-container #tabs ul li a:after {
+    background: #202020;
 }
