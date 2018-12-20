@@ -399,13 +399,28 @@ body .redactor-source:focus {
     background-color: $inputElementBgColor;
 }
 
-.redactor-toolbar a.re-button-icon,
-.redactor-toolbar a.re-button-icon:hover {
-    background: #333 !important; color: #666 !important;
+body .redactor-toolbar a.re-button-icon,
+body .redactor-toolbar a.re-button-icon:hover {
+    background: #333;
+    color: #666;
 }
 
-.input .redactor-toolbar {
-    border-color: #333 !important;
+body .redactor-dropdown {
+    background-color: $menuBgColor;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    a{
+        color: $textColor;
+        border-bottom: none;
+    }
+}
+
+body .redactor-dropdown a.redactor-dropdown-item-disabled {
+    color: rgba($textColor, 0.4);
+    background: $menuBgColor;
+}
+
+body .redactor-dropdown-format .redactor-dropdown-item-blockquote {
+    color: rgba($textColor, 0.4);
 }
 
 body.ltr #main-container #main #main-content #content-container #tabs ul li a.sel:after {
