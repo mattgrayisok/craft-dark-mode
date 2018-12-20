@@ -190,6 +190,10 @@ body.ltr table.editable tbody tr th ~ td:not(:first-child) {
   background: $darkSelColor;
 }
 
+.sidebar .customize-sources {
+  color: rgba(255, 255, 255, 0.2);
+}
+
 /****
 * _cp.scss
 ****/
@@ -307,11 +311,13 @@ body #plugins tbody .plugin-infos .details .license-key .pane {
     background: #000;
 }
 
+
 /****
 * pluginstore/main.scss
 ****/
 
-body ul.categories li:before, ul.categories li:last-child:after {
+body .ps-grid-wrapper ul.categories li:before,
+body .ps-grid-wrapper ul.categories li:last-child:after{
     border-top: 1px solid $hairlineColor;
 }
 
@@ -347,4 +353,12 @@ body #pluginstore-modal.step-plugin-details .plugin-details .plugin-details-body
 
 body #pluginstore-modal.step-plugin-details .plugin-details .plugin-details-body .plugin-sidebar .plugin-meta ul.plugin-meta-data {
     border-bottom: 1px solid $hairlineColor;
+}
+
+/****
+* dashboard.scss
+****/
+
+body .widget > .back > .pane {
+  background: $lightBgColor;
 }
