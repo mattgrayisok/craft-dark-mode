@@ -429,3 +429,16 @@ body.ltr #main-container #main #main-content #content-container #tabs ul li a.se
 body.ltr #main-container #main #main-content #content-container #tabs ul li a:after {
     background: #202020;
 }
+
+body .input .redactor-styles {
+    h1, h2, h3, h4, h5, h6 {
+        color: $textColor;
+    }
+    pre, pre code{
+        background-color: #272424;
+        color: #fff;
+    }
+    code, kbd, mark, pre, small, time, var {
+        color: #fff;
+    }
+}
