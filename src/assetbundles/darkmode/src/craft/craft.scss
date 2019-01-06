@@ -1,9 +1,19 @@
 @charset "utf-8";
 
-@import "reset";
-@import "main";
-@import "cp";
-@import "fld";
-@import "image_editor";
-@import "shame";
-@import "../additional";
+//@import "reset";
+
+body.darkmode {
+    @import "main";
+    @import "cp";
+    @import "fld";
+    @import "image_editor";
+    @import "shame";
+    @import "../additional";
+}
+
+html, body.darkmode{
+    background: #202020;
+    color: hsl(0, 0%, 90%);;
+}
+
+@import "../cp-bits";

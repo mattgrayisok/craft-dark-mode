@@ -1,0 +1,78 @@
+
+//Thanks => https://codepen.io/jesperkc/pen/pydMqb
+.dark-mode-switch{
+    #dark-toggle{
+        position:relative;
+        left:-9999px;
+        width:0;
+        height:0;
+        overflow: hidden;
+    }
+
+    .dark-toggle-label:before, .dark-toggle-label:after{
+        box-sizing:border-box;
+        margin:0;
+        padding:0;
+        /*transition*/
+        -webkit-transition:.25s ease-in-out;
+        -moz-transition:.25s ease-in-out;
+        -o-transition:.25s ease-in-out;
+        transition:.25s ease-in-out;
+        outline:none;
+    }
+    label{
+        display:block;
+        position:relative;
+        padding:0px;
+        margin:0 auto;
+        font-size:14px;
+        line-height:16px;
+        cursor:pointer;
+        color: rgba(149, 149, 149, 0.51);
+        font-weight: normal;
+        width:40px;
+    }
+    .dark-toggle-label:before{
+        content:'';
+        display:block;
+        position:absolute;
+        z-index:1;
+        line-height:34px;
+        text-indent:40px;
+        height:16px;
+        width:16px;
+        margin: 4px;
+        /*border-radius*/
+        -webkit-border-radius:100%;
+        -moz-border-radius:100%;
+        border-radius:100%;
+        right: 15px;
+        bottom: 0px;
+        background:#FFB200;
+        transform: rotate(-45deg);
+        box-shadow: 0 0 10px white;
+    }
+    .dark-toggle-label:after{
+        content: "";
+        display: inline-block;
+        width: (16px * 2) + (4px * 2);
+        height:16px + (4px * 2);
+        /*border-radius*/
+        -webkit-border-radius: 16px;
+        -moz-border-radius: 16px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.05);
+        vertical-align: middle;
+        margin: 0 0;
+        border: 2px solid #FFB200;
+    }
+    input[type=checkbox]:checked + .dark-toggle-label:before{
+        right: 7px;
+        box-shadow: 5px 5px 0 0 #eee;
+        background: transparent;
+    }
+    input[type=checkbox]:checked + .dark-toggle-label:after{
+        background: rgba(0, 0, 0, 0.15);;
+        border: 2px solid white;
+    }
+}

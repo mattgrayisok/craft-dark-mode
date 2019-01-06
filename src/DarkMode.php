@@ -17,6 +17,7 @@ use Craft;
 use craft\base\Plugin;
 use craft\services\Plugins;
 use craft\events\PluginEvent;
+use craft\web\View;
 
 use yii\base\Event;
 
@@ -57,10 +58,17 @@ class DarkMode extends Plugin
         parent::init();
         self::$plugin = $this;
 
-        if ( Craft::$app->request->isCpRequest && !Craft::$app->user->isGuest )
-        {
-            $this->view->registerAssetBundle(DarkModeAsset::class);
-        }
+        Event::on(
+            Plugins::class,
+            Plugins::EVENT_AFTER_LOAD_PLUGINS,
+            function () {
+                $request = Craft::$app->getRequest();
+                // Respond to Control Panel requests
+                if ($request->getIsCpRequest() && !$request->getIsConsoleRequest()) {
+                   $this->handleAdminCpRequest();
+                }
+            }
+        );
 
         Craft::info(
             Craft::t(
@@ -70,6 +78,34 @@ class DarkMode extends Plugin
             ),
             __METHOD__
         );
+    }
+
+    protected function handleAdminCpRequest()
+    {
+        $request = Craft::$app->getRequest();
+        if (!Craft::$app->user->isGuest) {
+            $this->view->registerAssetBundle(DarkModeAsset::class);
+
+            Event::on(
+                View::class,
+                View::EVENT_BEGIN_BODY,
+                function () {
+                    Craft::debug(
+                        'View::EVENT_BEGIN_BODY',
+                        __METHOD__
+                    );
+                    // JS here to add class to body tag to avoid style flash if it's added later
+                    if(true){
+                        echo "<script>
+                        var body = document.getElementsByTagName('body')[0];
+                        if (localStorage.getItem('darkmode-enabled') == 'true') {
+                            body.classList.add('darkmode');
+                        }
+                        </script>";
+                    }
+                }
+            );
+        }
     }
 
     // Protected Methods

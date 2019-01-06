@@ -3,23 +3,27 @@
 /****
 * CraftSupportWidget.scss
 *****/
-.darkmode{
-    .cs-screen-2 .cs-search-results-container {
-      background: $lightBgColor;
-    }
 
-    .cs-screen-home .cs-opt:not(:first-child) {
-      border-top: 1px solid $hairlineColor;
-    }
-
-    .cs-screen-home .cs-opt:hover {
-      background: $lightBgColor;
-    }
+.cs-screen-2 .cs-search-results-container {
+  background: $lightBgColor;
 }
+
+.cs-screen-home .cs-opt:not(:first-child) {
+  border-top: 1px solid $hairlineColor;
+}
+
+.cs-screen-home .cs-opt:hover {
+  background: $lightBgColor;
+}
+
 
 /****
 * main.scss
 ****/
+
+@at-root body#{&} {
+  background: $bgColor;
+}
 
 /* submit buttons */
 .btn.submit {
@@ -50,6 +54,10 @@
 .secondary-buttons .btn.submit:not(.disabled):not(.inactive):hover,
 .secondary-buttons .btn.submit:not(.disabled):not(.inactive).hover {
     background-image: linear-gradient(lighten($secondarySubmitHoverColor, 4%), darken($secondarySubmitHoverColor, 16%));
+}
+
+.footer > .buttons {
+  margin: 0;
 }
 
 .modal,
@@ -178,7 +186,7 @@ table.editable tbody tr td {
   border: 1px solid $hairlineColor;
 }
 
-body.ltr table.editable tbody tr th ~ td:not(:first-child) {
+table.editable tbody tr th ~ td:not(:first-child) {
     border-left: 1px solid $hairlineColor;
 }
 
@@ -206,7 +214,7 @@ body.ltr table.editable tbody tr th ~ td:not(:first-child) {
     #main {
       #main-content {
         #sidebar-toggle {
-          body.showing-sidebar & {
+          showing-sidebar & {
             background: lighten($lightBgColor, 6%);
           }
         }
@@ -219,8 +227,8 @@ body.ltr table.editable tbody tr th ~ td:not(:first-child) {
     background: $lightBgColor;
 }
 
-body.ltr #main-container #main #main-content #content-container #tabs ul li a.sel:after,
-body.ltr #main-container #main #main-content #content-container #tabs ul li a:after {
+#main-container #main #main-content #content-container #tabs ul li a.sel:after,
+#main-container #main #main-content #content-container #tabs ul li a:after {
     background: none;
 }
 
@@ -243,48 +251,48 @@ body.ltr #main-container #main #main-content #content-container #tabs ul li a:af
     color: $mediumDarkTextColor;
 }
 
+#main-container .sidebar {
+    box-shadow: inset -1px 0 0 #1a1a1a;
+}
+
+/****
+* updates.scss
+****/
+
+#content .update .update-header{
+    border-bottom: 1px solid $hairlineColor;
+}
+
 /****
 * routes.scss
 ****/
 
-body .route {
+.route {
     background: $lightBgColor;
     box-shadow: 0 0 0 1px $hairlineColor;
     background-image: linear-gradient($lightBgColor, darken($lightBgColor, 1%));
     cursor: pointer;
 }
 
-body .route .uri-container {
+.route .uri-container {
     color: $linkColor;
     background-color: darken($lightBgColor, 4%);
 }
 
-body .route .uri-container:after {
-  body.ltr & {
-    background-image: url(images/route-bg.png);
-  }
-  body.rtl & {
-    background-image: url(images/route-bg_rtl.png);
-  }
+.route-settings .uri-tokens {
+  background: $inputElementBgColor;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05), inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-moz-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min-device-pixel-ratio: 1.5),
 only screen and (min-resolution: 1.5dppx) {
-    .route .uri-container:after {
-        body.ltr #global-container & {
-            background-image: url(images/route-bg_2x.png);
-        }
-        body.rtl #global-container & {
-            background-image: url(images/route-bg_rtl_2x.png);
-        }
-    }
-}
-
-body .route-settings .uri-tokens {
-  background: $inputElementBgColor;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05), inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  .route .uri-container:after {
+    background-size: 15px 32px;
+    background-image: none !important;
+  }
 }
 
 /****
@@ -307,7 +315,7 @@ body .route-settings .uri-tokens {
 * plugins.scss
 ****/
 
-body #plugins tbody .plugin-infos .details .license-key .pane {
+#plugins tbody .plugin-infos .details .license-key .pane {
     background: #000;
 }
 
@@ -316,17 +324,17 @@ body #plugins tbody .plugin-infos .details .license-key .pane {
 * pluginstore/main.scss
 ****/
 
-body .ps-grid-wrapper ul.categories li:before,
-body .ps-grid-wrapper ul.categories li:last-child:after{
+.ps-grid-wrapper ul.categories li:before,
+.ps-grid-wrapper ul.categories li:last-child:after{
     border-top: 1px solid $hairlineColor;
 }
 
-body ul.categories li a:hover {
+ul.categories li a:hover {
     background: $darkSelColor;
     border-color: $hairlineColorAlpha;
 }
 
-body .plugin-card {
+.plugin-card {
     border: 1px solid $hairlineColor;
     &:hover{
         background-color: $darkSelColor;
@@ -337,21 +345,21 @@ body .plugin-card {
 * pluginstore/modal.scss
 ****/
 
-body #pluginstore-modal.step-plugin-details .plugin-details .plugin-details-header {
+#pluginstore-modal.step-plugin-details .plugin-details .plugin-details-header {
     border-bottom: 1px solid $hairlineColor;
 }
 
-body #pluginstore-modal.step-plugin-details .plugin-details .plugin-details-body .plugin-sidebar {
+#pluginstore-modal.step-plugin-details .plugin-details .plugin-details-body .plugin-sidebar {
     background: $lightBgColor;
     border-left: 1px solid $hairlineColor;
     overflow: auto;
 }
 
-body #pluginstore-modal.step-plugin-details .plugin-details .plugin-details-body .plugin-sidebar .plugin-meta ul.plugin-meta-data li {
+#pluginstore-modal.step-plugin-details .plugin-details .plugin-details-body .plugin-sidebar .plugin-meta ul.plugin-meta-data li {
     border-bottom: 1px solid $hairlineColor;
 }
 
-body #pluginstore-modal.step-plugin-details .plugin-details .plugin-details-body .plugin-sidebar .plugin-meta ul.plugin-meta-data {
+#pluginstore-modal.step-plugin-details .plugin-details .plugin-details-body .plugin-sidebar .plugin-meta ul.plugin-meta-data {
     border-bottom: 1px solid $hairlineColor;
 }
 
@@ -359,7 +367,7 @@ body #pluginstore-modal.step-plugin-details .plugin-details .plugin-details-body
 * dashboard.scss
 ****/
 
-body .widget > .back > .pane {
+.widget > .back > .pane {
   background: $lightBgColor;
 }
 
@@ -368,27 +376,27 @@ body .widget > .back > .pane {
 * Text input and redactor
 ****/
 
-body textarea,
-body .text:not(.selectize-text),
-body .text:not(.fullwidth),
-body .border-box,
-body .matrix-configurator>.field>.input, .selectize-text>.selectize-control>.selectize-input,
-body .redactor-box, body .redactor-box.redactor-styles-on,
-body .input .redactor-styles,
+textarea,
+.text:not(.selectize-text),
+.text:not(.fullwidth),
+.border-box,
+.selectize-text>.selectize-control>.selectize-input,
+.redactor-box, .redactor-box.redactor-styles-on,
+.input .redactor-styles,
 {
     color: darken($textColor, 10%);
     background-color: $inputElementBgColor;
 }
 
 //Tweak for meta popups which look rubbish with dark inputs
-body .meta>.field>.input>.text,
-body .meta>.field>.input>.flex>.text,
-body .meta>.field>.input>.flex>.textwrapper>.text{
+.meta>.field>.input>.text,
+.meta>.field>.input>.flex>.text,
+.meta>.field>.input>.flex>.textwrapper>.text{
     background: none;
 }
 
 
-body .redactor-modal{
+.redactor-modal{
     input, select, textarea{
         color: darken($textColor, 10%);
         background-color: $inputElementBgColor;
@@ -407,33 +415,33 @@ body .redactor-modal{
     }
 }
 
-body .input .redactor-box:not(.redactor-box-fullscreen) {
+.input .redactor-box:not(.redactor-box-fullscreen) {
     border: 1px solid $hairlineColorAlpha;
     border-radius: $textBorderRadius;
 }
 
-body .input .redactor-box.focus:not(.redactor-box-fullscreen) {
+.input .redactor-box.focus:not(.redactor-box-fullscreen) {
     border-color: rgba($hairlineColorAlpha, 0.3) !important;
 }
 
-body .redactor-styles a,
-body .redactor-styles a:hover {
+.redactor-styles a,
+.redactor-styles a:hover {
     color: $linkColor
 }
 
-body .redactor-source,
-body .redactor-source:hover,
-body .redactor-source:focus {
+.redactor-source,
+.redactor-source:hover,
+.redactor-source:focus {
     background-color: $inputElementBgColor;
 }
 
-body .redactor-toolbar a.re-button-icon,
-body .redactor-toolbar a.re-button-icon:hover {
+.redactor-toolbar a.re-button-icon,
+.redactor-toolbar a.re-button-icon:hover {
     background: #333;
     color: #666;
 }
 
-body .redactor-dropdown {
+.redactor-dropdown {
     background-color: $menuBgColor;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
     a{
@@ -442,23 +450,23 @@ body .redactor-dropdown {
     }
 }
 
-body .redactor-dropdown a.redactor-dropdown-item-disabled {
+.redactor-dropdown a.redactor-dropdown-item-disabled {
     color: rgba($textColor, 0.4);
     background: $menuBgColor;
 }
 
-body .redactor-dropdown-format .redactor-dropdown-item-blockquote {
+.redactor-dropdown-format .redactor-dropdown-item-blockquote {
     color: rgba($textColor, 0.4);
 }
 
-body.ltr #main-container #main #main-content #content-container #tabs ul li a.sel:after {
+#main-container #main #main-content #content-container #tabs ul li a.sel:after {
     background: none;
 }
-body.ltr #main-container #main #main-content #content-container #tabs ul li a:after {
+#main-container #main #main-content #content-container #tabs ul li a:after {
     background: #202020;
 }
 
-body .input .redactor-styles {
+.input .redactor-styles {
     h1, h2, h3, h4, h5, h6 {
         color: $textColor;
     }
@@ -471,29 +479,29 @@ body .input .redactor-styles {
     }
 }
 
-body div#redactor-overlay {
+div#redactor-overlay {
     background: rgba(0,0,0,.75)!important;
 }
 
-body div.redactor-modal {
+div.redactor-modal {
     background: $menuBgColor;
 }
 
-body .redactor-modal-header {
+.redactor-modal-header {
     color: $textColor;
 }
 
-body .redactor-modal-footer {
+.redactor-modal-footer {
     background-image: linear-gradient(darken($menuBgColor, 3%), darken($menuBgColor, 4%));
     box-shadow: inset 0 2px 1px -2px rgba(0, 0, 0, 0.2);
 }
 
-body .redactor-modal label{
+.redactor-modal label{
     color: $mediumDarkTextColor;
     font-weight: bold;
 }
 
-body .redactor-modal button{
+.redactor-modal button{
     color: #fff;
     background-image: linear-gradient(#c66, #933);
     border:none;
@@ -504,7 +512,11 @@ body .redactor-modal button{
     }
 }
 
-body .redactor-modal button.redactor-button-danger,
-body .redactor-modal button.redactor-button-unstyled {
+.redactor-modal button.redactor-button-danger,
+.redactor-modal button.redactor-button-unstyled {
     color: $textColor;
+    background: none;
+    &:hover{
+        background: none;
+    }
 }
