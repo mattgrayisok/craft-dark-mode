@@ -32,6 +32,13 @@ Sometimes you just need a little less light and a little more shade.
 
 ![Screenshot](resources/img/screengrab.png)
 
+## Supports Dark Mode
+
+These plugins have added support for Dark Mode to provide you with a seamless experience throughout
+the control panel:
+
+* [Doxter](https://selvinortiz.com/plugins/doxter) - Beautiful Markdown Editor and Smart Parser for Craft CMS
+
 ## Plugin Developers
 
 If your plugin adds custom elements to the control panel and you'd like to support Dark Mode
