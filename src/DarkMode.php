@@ -45,7 +45,7 @@ class DarkMode extends Plugin
     /**
      * @var string
      */
-    public $schemaVersion = '1.0.2';
+    public $schemaVersion = '1.1.0';
 
     // Public Methods
     // =========================================================================
@@ -95,14 +95,14 @@ class DarkMode extends Plugin
                         __METHOD__
                     );
                     // JS here to add class to body tag to avoid style flash if it's added later
-                    if(true){
-                        echo "<script>
-                        var body = document.getElementsByTagName('body')[0];
-                        if (localStorage.getItem('darkmode-enabled') == 'true') {
-                            body.classList.add('darkmode');
-                        }
-                        </script>";
+
+                    echo "<script>
+                    var body = document.getElementsByTagName('body')[0];
+                    if (localStorage.getItem('darkmode-enabled') == 'true') {
+                        body.classList.add('darkmode');
                     }
+                    </script>";
+
                 }
             );
         }

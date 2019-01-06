@@ -30,6 +30,8 @@ To install the plugin manually, follow these instructions.
 
 Sometimes you just need a little less light and a little more shade.
 
+Once installed all users will be able to toggle dark mode on and off using the switch in the main navigation.
+
 ![Screenshot](resources/img/screengrab.png)
 
 ## Supports Dark Mode
