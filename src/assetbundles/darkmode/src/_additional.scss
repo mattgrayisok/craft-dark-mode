@@ -374,9 +374,29 @@ body .text:not(.fullwidth),
 body .border-box,
 body .matrix-configurator>.field>.input, .selectize-text>.selectize-control>.selectize-input,
 body .redactor-box, body .redactor-box.redactor-styles-on,
-body .input .redactor-styles{
+body .input .redactor-styles,
+{
     color: darken($textColor, 10%);
     background-color: $inputElementBgColor;
+}
+
+body .redactor-modal{
+    input, select, textarea{
+        color: darken($textColor, 10%);
+        background-color: $inputElementBgColor;
+        border: 1px solid $hairlineColorAlpha;
+        &:active, &:hover{
+            color: darken($textColor, 10%);
+            background-color: $inputElementBgColor;
+            border: 1px solid $hairlineColorAlpha;
+        }
+        &:focus{
+            color: darken($textColor, 10%);
+            background-color: $inputElementBgColor;
+            border-color: rgba($hairlineColorAlpha, 0.3) !important;
+            box-shadow: none;
+        }
+    }
 }
 
 body .input .redactor-box:not(.redactor-box-fullscreen) {
@@ -441,4 +461,42 @@ body .input .redactor-styles {
     code, kbd, mark, pre, small, time, var {
         color: #fff;
     }
+}
+
+body div#redactor-overlay {
+    background: rgba(0,0,0,.75)!important;
+}
+
+body div.redactor-modal {
+    background: $menuBgColor;
+}
+
+body .redactor-modal-header {
+    color: $textColor;
+}
+
+body .redactor-modal-footer {
+    background-image: linear-gradient(darken($menuBgColor, 3%), darken($menuBgColor, 4%));
+    box-shadow: inset 0 2px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+body .redactor-modal label{
+    color: $mediumDarkTextColor;
+    font-weight: bold;
+}
+
+body .redactor-modal button{
+    color: #fff;
+    background-image: linear-gradient(#c66, #933);
+    border:none;
+    &:hover{
+        background-image: linear-gradient(#bf4040, #732626);
+        color: #fff;
+
+    }
+}
+
+body .redactor-modal button.redactor-button-danger,
+body .redactor-modal button.redactor-button-unstyled {
+    color: $textColor;
 }
