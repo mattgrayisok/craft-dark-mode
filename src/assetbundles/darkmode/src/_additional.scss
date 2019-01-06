@@ -380,6 +380,14 @@ body .input .redactor-styles,
     background-color: $inputElementBgColor;
 }
 
+//Tweak for meta popups which look rubbish with dark inputs
+body .meta>.field>.input>.text,
+body .meta>.field>.input>.flex>.text,
+body .meta>.field>.input>.flex>.textwrapper>.text{
+    background: none;
+}
+
+
 body .redactor-modal{
     input, select, textarea{
         color: darken($textColor, 10%);
