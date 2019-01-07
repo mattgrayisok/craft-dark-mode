@@ -14,17 +14,9 @@ Install via the Craft Plugin Store
 
 OR
 
-To install the plugin manually, follow these instructions.
+To install the plugin manually:
 
-1. Open your terminal and go to your Craft project:
-
-        cd /path/to/project
-
-2. Then tell Composer to load the plugin:
-
-        composer require mattgrayisok/craft-dark-mode
-
-3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Dark Mode.
+`composer require mattgrayisok/craft-dark-mode`
 
 ## Dark Mode Overview
 
@@ -32,7 +24,7 @@ Sometimes you just need a little less light and a little more shade.
 
 Once installed all users will be able to toggle dark mode on and off using the switch in the main navigation.
 
-![Screenshot](resources/img/screengrab.png)
+![Screenshot](resources/img/darkmode.gif)
 
 ## Supports Dark Mode
 
@@ -51,7 +43,7 @@ simply add some additional styles to your plugin to take this into account.
 
 * Improve assets display. Might need to make some custom images
 * ~~Get redactor styling to match~~
-* Allow dark mode to be [de]activated on a per-user basis using a switch in the nav
+* ~~Allow dark mode to be [de]activated on a per-user basis using a switch in the nav~~
 
 Brought to you by [Matt Gray](https://mattgrayisok.com)
 
