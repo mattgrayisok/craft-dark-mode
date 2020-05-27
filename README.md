@@ -1,4 +1,6 @@
-# Dark Mode plugin for Craft CMS 3.x
+**This plugin works well up to Craft 3.3. Craft 3.4 made a lot of changes to document structure and styling in the control panel which broke a lot of stuff. Craft will soon be adding its own native dark mode and it's therefore unlikely this plugin will be updated to support Craft 3.4**
+
+# Dark Mode plugin for Craft CMS 3.0 - 3.3
 
 A Dark Mode for Craft CMS
 
