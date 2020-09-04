@@ -7,7 +7,7 @@
   "author": "Matt Gray",
   "license": "MIT",
   "devDependencies": {
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.13.1"
   },
   "scripts": {
     "build": "./node_modules/.bin/node-sass --output-style compressed ./src/assetbundles/darkmode/src/craft/craft.scss > ./src/assetbundles/darkmode/dist/css/DarkMode.css"
